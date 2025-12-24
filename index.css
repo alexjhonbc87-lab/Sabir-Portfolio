@@ -1,0 +1,80 @@
+:root {
+    --bg-grid: rgba(0,0,0,0.03);
+}
+
+.dark {
+    --bg-grid: rgba(255,255,255,0.03);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+.mono { font-family: 'Geist Mono', monospace; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 10px; }
+.dark ::-webkit-scrollbar-thumb { background: #27272a; }
+
+/* Lenis Smooth Scroll Fixes */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+/* Grid Pattern */
+.bg-grid-pattern {
+    background-image: radial-gradient(var(--bg-grid) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* Shine Effect for Hero/Project Containers */
+.reveal-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.reveal-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: left 0.8s ease-in-out;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.reveal-container:hover::after {
+    left: 150%;
+}
+
+/* Shadow utilities for production depth */
+.shadow-4xl {
+    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.25);
+}
+
+.dark .shadow-4xl {
+    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.6);
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 5s ease-in-out infinite;
+}
