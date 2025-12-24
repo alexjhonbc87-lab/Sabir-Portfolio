@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-/* Fix: Type-cast motion to any to resolve multiple environment-specific TypeScript errors where motion props and shorthands are not recognized */
+/* Fix: Type-cast motion to any to resolve multiple environment-specific TypeScript errors */
 import { motion as motionBase, AnimatePresence, useScroll, useSpring, useTransform } from 'framer-motion';
 const motion = motionBase as any;
 import Lenis from 'lenis';
@@ -29,7 +29,7 @@ import {
   Check,
   AlertCircle
 } from 'lucide-react';
-import { EXPERIENCES, PROJECTS, SKILLS } from './data';
+import { EXPERIENCES, PROJECTS, SKILLS } from './data.ts';
 
 // --- Components ---
 
