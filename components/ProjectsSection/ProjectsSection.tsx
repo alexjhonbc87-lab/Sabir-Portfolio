@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
@@ -6,6 +5,12 @@ import { SectionHeading } from '../Common/UI';
 import { PROJECTS } from '../../data';
 
 export const ProjectsSection: React.FC = () => {
+  // Production-ready high-quality placeholders if specific images are not provided
+  const projectImages = [
+    "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1600", // E-commerce
+    "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=1600"  // AI / Crypto
+  ];
+
   return (
     <section id="projects" className="py-48 lg:py-64 px-6 md:px-12 lg:px-24 overflow-hidden">
       <div className="max-w-screen-2xl mx-auto">
@@ -29,7 +34,7 @@ export const ProjectsSection: React.FC = () => {
                   className="relative aspect-[16/10] bg-zinc-100 dark:bg-zinc-900 p-2 overflow-hidden"
                 >
                   <img 
-                    src={`https://ibb.co/nMW24qL6`} 
+                    src={projectImages[idx] || projectImages[0]} 
                     alt={project.title} 
                     className="w-full h-full object-cover rounded-[2.5rem] lg:rounded-[3.5rem] grayscale brightness-75 transition-all duration-1000 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105"
                   />

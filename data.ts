@@ -51,7 +51,7 @@ export const PROJECTS: Project[] = [
   },
  {
   id: 'proj2',
-  title: 'AI World Tech Plateform',
+  title: 'AI World Tech Platform',
   problem: 'Users lacked a secure and transparent system to manage ROI-based investments, referral earnings, and wallet balances within a single unified platform.',
   solution: 'Built a full-featured investment application enabling users to invest funds, earn daily ROI, track MLM referral rewards, and manage balances through an internal wallet system with admin-controlled approvals.',
   architecture: 'Complete MERN stack architecture with role-based access control, RESTful APIs, secure transaction flows, and optimized frontend state management for real-time updates.',
